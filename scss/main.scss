@@ -1,0 +1,149 @@
+@import url("https://fonts.googleapis.com/css2?family=Outfit:wght@300;400;600&display=swap");
+
+/*** Colors ***/
+$soft-blue: hsl(215, 51%, 70%);
+$cyan: hsl(178, 100%, 50%);
+$very-dark-blue-100: hsl(217, 54%, 11%); /*main BG*/
+$very-dark-blue-200: hsl(216, 50%, 16%); /*card BG*/
+$very-dark-blue-300: hsl(215, 32%, 27%); /*line*/
+$white: hsl(0, 0%, 100%);
+/*** Colors END***/
+
+/*
+Mobile: 375px
+Desktop: 1440px
+*/
+
+* {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+html {
+  font-family: "Outfit", sans-serif;
+  font-size: 62.5%;
+}
+
+body {
+  background-color: $very-dark-blue-100;
+  color: $soft-blue;
+  overflow: hidden;
+  font-size: 1.6em;
+}
+
+a {
+  text-decoration: none;
+  color: $white;
+  &:hover {
+    color: $cyan;
+  }
+}
+
+img {
+  max-width: 100%;
+  height: auto;
+  object-fit: scale-down;
+  display: block;
+}
+
+p {
+  font-size: 1.8rem;
+  font-weight: 300;
+}
+
+.container {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 100vh;
+}
+
+.card {
+  background-color: $very-dark-blue-200;
+  max-width: 350px;
+  padding: 2.4rem;
+  border-radius: 1.5rem;
+}
+
+.card-image__holder {
+  border-radius: 1rem;
+  overflow: hidden;
+  position: relative;
+  cursor: pointer;
+
+  .view-details {
+    opacity: 0;
+    background-color: rgba(0, 255, 247, 0.5);
+    background-image: url(".././images/icon-view.svg");
+    background-repeat: no-repeat;
+    background-position: center;
+    position: absolute;
+    top: 0;
+    left: 0;
+    height: 100%;
+    width: 100%;
+    transition: opacity 500ms ease;
+  }
+  &:hover,
+  &:focus-within {
+    .view-details {
+      opacity: 100;
+    }
+  }
+}
+
+.card-text__holder {
+  margin-top: 2.3rem;
+}
+
+.nft-text__holder {
+  h1 {
+    font-size: 2.2rem;
+    font-weight: 600;
+  }
+  p {
+    margin-top: 17px;
+    line-height: 1.4;
+  }
+}
+
+.nft-text__holder--price-wrapper {
+  margin-top: 24px;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  div {
+    display: flex;
+    gap: 0.8rem;
+    p {
+      margin-top: 0;
+      font-size: 1.6rem;
+    }
+  }
+  #eth-price {
+    p {
+      font-weight: 400;
+      color: $cyan;
+    }
+  }
+}
+
+.card-user__holder {
+  border-top: 1px solid $very-dark-blue-300;
+  display: flex;
+  align-items: center;
+  gap: 1.6rem;
+  margin-top: 23px;
+  padding: 15px 0 10px;
+  .card-user__holder--img-wrapper {
+    border-radius: 50%;
+    border: 1px solid $white;
+    height: 3.3rem;
+    width: 3.3rem;
+  }
+  p {
+    font-size: 1.6rem;
+    letter-spacing: 0.2px;
+  }
+}
